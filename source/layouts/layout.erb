@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <title><%= current_page.data.title || "Tysson" %></title>
+
+    <title>TYSSON</title>
+    <meta name="description" content="Official website of TYSSON. Download/Stream new music, see tour dates and more.">
+    <meta name="author" content="TYSSON">
+    <meta property="og:title" content="TYSSON"/>
+    <meta property="og:url" content="http://www.tyssonband.com" />
+    <meta property="og:image" content="http://www.tyssonband.com/images/tysson-logo-1500x1500.jpg" />
+    <meta property="og:site_name" content="Tysson"/>
+    <meta property="og:description" content="Official website of TYSSON. Download/Stream new music, see tour dates and more."/>
+    <%= favicon_tag 'images/favicon.png' %>
+
+    <%= stylesheet_link_tag :site %>
+    <%= javascript_include_tag :all %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <%= yield %>
+  </body>
+</html>

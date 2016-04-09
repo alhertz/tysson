@@ -1,0 +1,138 @@
+@charset "utf-8";
+@import "normalize";
+$white: #fff;
+$gray: #666;
+$black: #000;
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  background-color: #000000;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+
+  @media (max-width: 800px) {
+    padding: 40px 24px 24px;
+  }
+}
+
+a {
+  color: $gray;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms ease-in-out;
+
+  &:active {
+    top: 1px;
+  }
+
+  &:after {
+    width: 100%;
+    background-color: $gray;
+    height: 1px;
+    display: block;
+    content: '';
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 150ms ease-in-out;
+  }
+
+  &:hover {
+    color: $white;
+
+    &:after {
+      background-color: $white;
+      opacity: 1;
+      transform: translateY(3px);
+    }
+  }
+}
+
+.island {
+  width: 100%;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  top: 50%;
+
+  @media (max-width: 800px) {
+    top: 0;
+    transform: translateY(0);
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.social {
+  bottom: 24px;
+  color: $white;
+  left: 24px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+
+  @media (max-width: 800px) {
+    position: relative;
+    left: auto;
+    bottom: auto;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 16px;
+
+    @media (max-width: 800px) {
+      display: block;
+      margin-bottom: 16px;
+      margin-right: 0;
+    }
+
+    &--is-text {
+      color: $white;
+
+      &:after {
+        background-color: $gray;
+        content: '';
+        margin-left: 10px;
+        width: 20px;
+        height: 1px;
+        display: inline-block;
+        top: -3px;
+        position: relative;
+
+        @media (max-width: 800px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.subscribe {
+  right: 24px;
+  bottom: 24px;
+  position: absolute;
+
+  @media (max-width: 800px) {
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+
+  a {
+    color: $white;
+  }
+}
