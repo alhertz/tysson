@@ -17,11 +17,7 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
-
-# Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-end
+activate :sprockets
 
 ###
 # Helpers
@@ -37,10 +33,10 @@ end
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 end
 
 activate :autoprefixer
