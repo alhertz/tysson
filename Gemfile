@@ -12,4 +12,4 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '>= 4.0.0'
 gem 'middleman-autoprefixer'
 gem "middleman-sprockets"
-gem 'middleman-deploy', '~> 1.0'
+gem 'middleman-gh-pages'

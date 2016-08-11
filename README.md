@@ -1,18 +1,18 @@
 #### Overview
 
-Code for official website of [Tysson](tyssonband.com), built with [Middleman](https://middlemanapp.com)
+Code for official website of [Tysson](tyssonband.com), built with [Middleman](https://middlemanapp.com).
 
 #### Setup
 
-1. Run bundler (must be installed)
+1. Install Ruby dependencies with bundler (must be installed)
 ```
 bundle install
 ```
-2. Install JS dependencies
+2. Install javascript dependencies with Bower (currently  jQuery)
 ```
 bower install
 ```
-3. Run the "app"
+3. Run the "app" 
 ```
 middleman serve
 ```
@@ -20,5 +20,6 @@ middleman serve
 #### Deployment
 
 ```
-middleman deploy
+rake build
+rake publish 
 ```
