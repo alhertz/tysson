@@ -16,3 +16,9 @@ bower install
 ```
 middleman serve
 ```
+
+#### Deployment
+
+```
+middleman deploy
+```
