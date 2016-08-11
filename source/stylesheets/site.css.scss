@@ -1,9 +1,19 @@
-@charset "utf-8";
+//
+// Imports
+//
+
 @import "normalize";
+
+
+//
+// Variables
+//
+
 $white: #fff;
 $gray: #666;
 $black: #000;
 $page-padding: 40px;
+
 
 //
 // Base styles
@@ -14,17 +24,22 @@ body {
   height: 100%;
   position: relative;
   font-size: 10px;
+
+  @media (max-width: 800px) {
+    height: auto;
+    font-size: 8px;
+  }
 }
 
 body {
   background-color: #000000;
-  text-align: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 3px;
   font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
 
   @media (max-width: 800px) {
     padding: 40px 24px 24px;
@@ -32,7 +47,7 @@ body {
 }
 
 a:not(.button) {
-  color: $gray;
+  color: rgba($white, 0.3);
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -40,6 +55,10 @@ a:not(.button) {
 
   &:active {
     top: 1px;
+  }
+
+  &:visited {
+    color: $white;
   }
 
   &:after {
@@ -67,43 +86,55 @@ a:not(.button) {
 button,
 .button {
   border-color: $white;
+  border-radius: 2px;
   border-style: solid;
   border-width: 1px;
-  padding-left: 24px;
-  padding-right: 24px;
+  display: inline-block;
+  font-weight: 500;
   height: 56px;
   line-height: 56px;
-  display: inline-block;
+  padding-left: 24px;
+  padding-right: 24px;
   text-decoration: none;
   transition: all 150ms ease-in-out;
 
   &:hover {
     border-color: $gray;
   }
+
+  &:visited {
+    color: $white;
+  }
 }
+
 
 //
 // Centered content (island)
 //
+
 .island {
   display: none;
   margin: 0 auto;
   max-width: 660px;
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
   z-index: 11;
 
   @media (max-width: 800px) {
-    top: 0;
     transform: translateY(0);
+    position: relative;
+    top: auto;
+    margin-bottom: 32px;
   }
 }
+
 
 //
 // Responsive iframes
 //
+
 .responsive-iframe-container {
   height: 0;
   overflow: hidden;
@@ -120,27 +151,34 @@ button,
   }
 }
 
+
 //
 // Band photograph
 //
+
 .band-photograph {
   background-image: image-url("background.jpg");
   background-position: center center;
   background-size: cover;
+  display: none;
   height: 100%;
   left: 0;
+  opacity: 0.2;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
 }
 
+
 //
 // Social links
 //
+
 .social {
   bottom: $page-padding;
   color: $white;
+  display: none;
   left: $page-padding;
   margin: 0;
   padding: 0;
@@ -151,6 +189,7 @@ button,
     position: relative;
     left: auto;
     bottom: auto;
+    margin-bottom: 32px;
   }
 
   &__item {
@@ -184,10 +223,63 @@ button,
   }
 }
 
-.subscribe {
-  right: $page-padding;
-  bottom: $page-padding;
+
+//
+// Wordmark
+//
+
+.wordmark {
+  background-image: image-url("wordmark.png");
+  background-size: cover;
+  display: none;
+  height: 56px;
+  left: $page-padding;
   position: absolute;
+  text-indent: -9999px;
+  top: $page-padding;
+  width: 167px;
+  z-index: 11;
+
+  @media (max-width: 800px) {
+    position: relative;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    top: auto;
+  }
+}
+
+//
+// Listen link
+//
+.listen-link {
+  display: block;
+  display: none;
+  position: absolute;
+  right: $page-padding;
+  top: $page-padding;
+  z-index: 11;
+
+  @media (max-width: 800px) {
+    position: relative;
+    margin: 0 auto;
+    right: auto;
+    top: auto;
+    margin-bottom: 32px;
+  }
+}
+
+
+//
+// Subscribe
+//
+
+.subscribe {
+  bottom: $page-padding;
+  display: none;
+  position: absolute;
+  right: $page-padding;
   z-index: 11;
 
   @media (max-width: 800px) {
