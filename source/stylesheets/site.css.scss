@@ -3,18 +3,24 @@
 $white: #fff;
 $gray: #666;
 $black: #000;
+$page-padding: 40px;
+
+//
+// Base styles
+//
 
 html,
 body {
   height: 100%;
   position: relative;
+  font-size: 10px;
 }
 
 body {
   background-color: #000000;
   text-align: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1em;
+  font-size: 1.6rem;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -25,7 +31,7 @@ body {
   }
 }
 
-a {
+a:not(.button) {
   color: $gray;
   display: inline-block;
   position: relative;
@@ -58,13 +64,36 @@ a {
   }
 }
 
+button,
+.button {
+  border-color: $white;
+  border-style: solid;
+  border-width: 1px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 56px;
+  line-height: 56px;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    border-color: $gray;
+  }
+}
+
+//
+// Centered content (island)
+//
 .island {
-  width: 100%;
-  position: relative;
-  max-width: 660px;
+  display: none;
   margin: 0 auto;
-  transform: translateY(-50%);
+  max-width: 660px;
+  position: absolute;
   top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 11;
 
   @media (max-width: 800px) {
     top: 0;
@@ -76,11 +105,11 @@ a {
 // Responsive iframes
 //
 .responsive-iframe-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 35px;
   height: 0;
   overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  position: relative;
 
   iframe {
     position: absolute;
@@ -92,15 +121,31 @@ a {
 }
 
 //
+// Band photograph
+//
+.band-photograph {
+  background-image: image-url("background.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+//
 // Social links
 //
 .social {
-  bottom: 24px;
+  bottom: $page-padding;
   color: $white;
-  left: 24px;
+  left: $page-padding;
   margin: 0;
   padding: 0;
   position: absolute;
+  z-index: 11;
 
   @media (max-width: 800px) {
     position: relative;
@@ -140,9 +185,10 @@ a {
 }
 
 .subscribe {
-  right: 24px;
-  bottom: 24px;
+  right: $page-padding;
+  bottom: $page-padding;
   position: absolute;
+  z-index: 11;
 
   @media (max-width: 800px) {
     position: relative;
