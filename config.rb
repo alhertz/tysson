@@ -40,3 +40,4 @@ configure :build do
 end
 
 activate :autoprefixer
+activate :directory_indexes
