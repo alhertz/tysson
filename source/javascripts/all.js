@@ -1,5 +1,3 @@
-//= require vendor/jquery/dist/jquery.js
-
 $(function() {
   $('.band-photograph').fadeIn(500);
 
