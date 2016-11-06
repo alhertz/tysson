@@ -1,6 +1,6 @@
 ## Overview
 
-Code for official website of [Tysson](tyssonband.com), built with [Middleman](https://middlemanapp.com).
+Code for official website of [Tysson](http://tyssonband.com), built with [Middleman](https://middlemanapp.com).
 
 #### Setup
 
