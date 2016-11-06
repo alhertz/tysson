@@ -1,4 +1,4 @@
-##rake p## Overview
+## Overview
 
 Code for official website of [Tysson](tyssonband.com), built with [Middleman](https://middlemanapp.com).
 
