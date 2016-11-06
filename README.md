@@ -1,4 +1,4 @@
-#### Overview
+##rake p## Overview
 
 Code for official website of [Tysson](tyssonband.com), built with [Middleman](https://middlemanapp.com).
 
@@ -20,6 +20,7 @@ middleman serve
 #### Deployment
 
 ```
-rake build
-rake publish 
+git push origin master
 ```
+
+Any update to master triggers automatic deployments to tysson-production.netlify.com
